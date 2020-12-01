@@ -26,6 +26,7 @@ Obj/
 appsettings.json
 *.db
 Readme
+README
 
 # Visual Studio 2015 cache/options directory
 .vs/
