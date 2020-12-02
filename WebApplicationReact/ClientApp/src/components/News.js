@@ -12,20 +12,23 @@ export class News extends Component {
         };
     }
 
-    getClickedNewsId(value) {
-        this.setState({
-            selectedNewsId: value
-        });
-    }
-
     async populateNewsData() {
         const response = await fetch('api/news');
-        const data = await response.json();
-        this.setState({ params: data });
+        const data = await response.json();       
+        this.setState({
+            params: data,
+            selectedNewsId: data[0].id
+        });
     }
 
     componentDidMount() {
         this.populateNewsData();
+    }
+
+    getClickedNewsId(value) {
+        this.setState({
+            selectedNewsId: value
+        });
     }
 
     render() {
